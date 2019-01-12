@@ -1,1 +1,3 @@
 # auth-boiler
+
+Model associations

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     dob: DataTypes.DATE,
     bio: DataTypes.TEXT,
-    admin: DataTypes.BOOLEAN,
+    // admin: DataTypes.BOOLEAN,
     image: {
       type: DataTypes.TEXT,
       validate: {
@@ -44,7 +44,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   user.associate = function(models) {
-    // associations can be defined here
+    // 1 user : x parties
+    models.user.hasMany(models.party)
   };
   user.prototype.validPassword = function(typedPasword){
     return bcrypt.compareSync(typedPasword, this.password);

@@ -9,8 +9,8 @@ router.get('/', loggedIn, function(req, res){
     res.render('profile');
 });
 
-router.get('/admins', function(req, res){
-    res.render('admin');
-});
+// router.get('/admins', function(req, res){
+//     res.render('admin');
+// });
 
 module.exports = router;
